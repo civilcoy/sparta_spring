@@ -58,7 +58,6 @@ public class PostService {
     @Transactional
     public Long deletePost(Long id, String pw, PostRequestDto requestDto) {
         String password = requestDto.getPassword();
-        String msg = "삭제 완료";
         if(password.equals(pw)){
             postRepository.deleteById(id);
         }else {
